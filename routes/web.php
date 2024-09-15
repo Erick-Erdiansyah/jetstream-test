@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
+
 Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth');
@@ -37,7 +38,7 @@ Route::middleware('auth')->group(function () {
     });
     // no paginate
 // Route::get('/users', function () {
-//     return inertia::render('Users',[
+//     return inertia::render('Users',[`
 //         'users' => User::all()->map(fn ($user) => [ 
 //             'id'=> $user->id,
 //             'name'=> $user->name,
